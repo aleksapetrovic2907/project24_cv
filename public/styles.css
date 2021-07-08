@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(243, 243, 243) !important;
+}
+
+.personal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+
+    padding: 0 2em;
+}
+
+.personal-info .right {
+    text-align: right;
+}

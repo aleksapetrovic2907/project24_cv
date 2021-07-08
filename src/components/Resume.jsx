@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PersonalInfo from "./PersonalInfo";
 
 class Resume extends Component {
   state = {};
@@ -7,7 +8,7 @@ class Resume extends Component {
       <div className="container">
         <div class="card">
           <div class="card-body">
-            <h1>Test</h1>
+            <PersonalInfo />
           </div>
         </div>
       </div>

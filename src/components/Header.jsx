@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1 className="text-center">CV Builder</h1>
+        <h1 className="text-center display-5 pb-4 pt-2">CV Builder</h1>
       </header>
     );
   }
