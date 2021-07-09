@@ -21,44 +21,44 @@ class EditableLabel extends Component {
 
   handleChange = (e) => {
     this.setState({
-      text: e.target.value
+      text: e.target.value,
     });
-  }
+  };
 
   handleKeyDown = (e) => {
     // if 'ENTER' is pressed
-    if (e.target.value === 13)
-    {
-      this.save()
+    if (e.target.value === 13) {
+      this.save();
     }
   };
 
   handleBlur = () => {
-    this.save()
-  }
+    this.save();
+  };
 
   save = () => {
-		this.setState({
-			text: this.state.text,
-			isEditing: false
-		})
+    this.setState({
+      text: this.state.text,
+      isEditing: false,
+    });
 
-		if(this.state.text === ''){
-			this.setState({
-				text: this.state.default
-			})
-		}
-	}
+    if (this.state.text === "") {
+      this.setState({
+        text: this.state.default,
+      });
+    }
+  };
 
   render() {
     return this.state.isEditing ? (
       <input
         type="text"
-        autofocus={true}
+        autoFocus={true}
         text={this.state.text}
         onChange={this.handleChange}
         onKeyDown={this.handleKeyDown}
         onBlur={this.handleBlur}
+        value={this.state.text}
       />
     ) : (
       <this.state.tag onDoubleClick={this.handleClick}>asd</this.state.tag>
