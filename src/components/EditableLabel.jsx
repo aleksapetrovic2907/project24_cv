@@ -7,6 +7,7 @@ class EditableLabel extends Component {
       text: props.value,
       tag: props.tag,
       default: props.value,
+      className: props.className,
 
       isEditing: false,
     };
@@ -25,9 +26,8 @@ class EditableLabel extends Component {
     });
   };
 
-  handleKeyDown = (e) => {
-    // if 'ENTER' is pressed
-    if (e.target.value === 13) {
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
       this.save();
     }
   };
@@ -56,12 +56,18 @@ class EditableLabel extends Component {
         autoFocus={true}
         text={this.state.text}
         onChange={this.handleChange}
-        onKeyDown={this.handleKeyDown}
+        onKeyPress={this.handleKeyPress}
         onBlur={this.handleBlur}
         value={this.state.text}
+        className={"form-control " + this.state.className}
       />
     ) : (
-      <this.state.tag onDoubleClick={this.handleClick}>asd</this.state.tag>
+      <this.state.tag
+        className={this.state.className}
+        onClick={this.handleClick}
+      >
+        {this.state.text}
+      </this.state.tag>
     );
   }
 }
