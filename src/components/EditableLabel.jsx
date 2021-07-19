@@ -4,7 +4,7 @@ class EditableLabel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: props.value,
+      text: "",
       tag: props.tag,
       default: props.value,
       className: props.className,
@@ -15,7 +15,6 @@ class EditableLabel extends Component {
 
   handleClick = () => {
     this.setState({
-      text: this.state.text,
       isEditing: true,
     });
   };
@@ -38,16 +37,13 @@ class EditableLabel extends Component {
 
   save = () => {
     this.setState({
-      text: this.state.text,
       isEditing: false,
     });
-
-    if (this.state.text === "") {
-      this.setState({
-        text: this.state.default,
-      });
-    }
   };
+
+  showText() {
+    return this.state.text === "" ? this.state.default : this.state.text;
+  }
 
   render() {
     return this.state.isEditing ? (
@@ -58,6 +54,7 @@ class EditableLabel extends Component {
         onChange={this.handleChange}
         onKeyPress={this.handleKeyPress}
         onBlur={this.handleBlur}
+        placeholder={this.state.default}
         value={this.state.text}
         className={"form-control " + this.state.className}
       />
@@ -66,7 +63,7 @@ class EditableLabel extends Component {
         className={this.state.className}
         onClick={this.handleClick}
       >
-        {this.state.text}
+        {this.showText()}
       </this.state.tag>
     );
   }

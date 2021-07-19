@@ -1,19 +1,24 @@
 body {
-    background-color: rgb(243, 243, 243) !important;
+  background-color: rgb(243, 243, 243) !important;
 }
 
 .personal-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-
-    padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
 }
 
 .personal-info .right {
-    text-align: right;
+  text-align: right;
 }
 
 .card {
-    box-shadow: 10px 5px 5px rgba(41, 41, 41, 0.363);
+  box-shadow: 10px 5px 5px rgba(41, 41, 41, 0.363);
+}
+
+.padded-x {
+  padding: 0 2em;
+}
+
+.skill-form {
 }

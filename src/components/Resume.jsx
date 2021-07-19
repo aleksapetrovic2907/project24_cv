@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PersonalInfo from "./PersonalInfo";
+import Skills from "./Skills";
+import Education from "./Education";
 
 class Resume extends Component {
   state = {};
@@ -9,6 +11,10 @@ class Resume extends Component {
         <div class="card">
           <div class="card-body">
             <PersonalInfo />
+            <hr />
+            <Education />
+            <hr />
+            <Skills />
           </div>
         </div>
       </div>
